@@ -1,7 +1,7 @@
 {
 	"id": "gemini-chat-integration",
 	"name": "Gemini Chat Integration",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"minAppVersion": "0.15.0",
 	"description": "Send text to Gemini and get responses directly in your notes",
 	"author": "FL",
