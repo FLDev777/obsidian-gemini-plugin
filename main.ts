@@ -91,10 +91,10 @@ export default class GeminiPlugin extends Plugin {
 
     switch (this.settings.improvementLevel) {
         case 'grammar':
-            prompt = 'Please correct any grammar and spelling errors in the following text.';
+            prompt = 'Please ONLY correct any grammar and spelling errors in the following text.';
             break;
         case 'structure':
-            prompt = 'Please correct grammar and spelling, and improve sentence structure and flow for the following text.';
+            prompt = 'Please ONLY correct grammar and spelling, and improve sentence structure and flow for the following text.';
             break;
         case 'style':
             prompt = 'Please correct grammar and spelling, improve sentence structure, and enhance word choice and writing style for the following text.';
@@ -264,9 +264,9 @@ class GeminiSettingTab extends PluginSettingTab {
       .setName('Model')
       .setDesc('Gemini model to use')
       .addDropdown(dropdown => dropdown
+        .addOption('gemini-2.5-pro', 'Gemini 2.5 Pro')
+        .addOption('gemini-2.5-flash', 'Gemini 2.5 Flash')
         .addOption('gemini-2.5-flash-lite', 'Gemini 2.5 Flash Lite')
-        .addOption('gemini-pro', 'Gemini Pro')
-        .addOption('gemini-pro-latest', 'Gemini Pro Latest')
         .setValue(this.plugin.settings.model)
         .onChange(async (value) => {
           this.plugin.settings.model = value;
